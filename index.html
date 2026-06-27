@@ -1,516 +1,337 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>TOEFL iBT 2026 Course — Built From Scratch for the New Format | Aidoss English Academy</title>
-<meta name="description" content="Aidoss Academy Self-Study: the full TOEFL iBT 2026 website course, 16 module-end skill tests, premium resources, audio, PDFs, and a $25 Complete Mock Exams or Aidoss Library credit for $79 one-time." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- ============================================================= -->
-<!--  AIDOSS ENGLISH ACADEMY — TOEFL iBT 2026 LANDING PAGE          -->
-<!--  Domain: aidossacademy.com                                  -->
-<!--                                                               -->
-<!--  >>> THINGS TO EDIT BEFORE GOING LIVE (search for "EDIT:") <<< -->
-<!--   1. CHECKOUT_URL — replace every Self-Study button link      -->
-<!--   2. PRICE        — $79 one-time                              -->
-<!--   3. EMAIL FORM — wire the form to MailerLite / Sender        -->
-<!--   4. [SWAP]     — every placeholder review / stat / image     -->
-<!--   5. IMG-xx     — replace image placeholders (see spec sheet) -->
-<!-- ============================================================= -->
+<!-- ============================================================
+     AIDOSS ENGLISH ACADEMY — TOEFL iBT 2026 LANDING PAGE
+     Domain: aidossacademy.com   (LearnWorlds-hosted course)
 
-<!-- Open Graph / social share (EDIT: replace og:image with IMG-OG 1200x630) -->
+     THINGS TO EDIT BEFORE GOING LIVE (search for "EDIT:")
+       1. CHECKOUT_URL — wire each plan button to its LearnWorlds checkout
+       2. APPLY_URL    — Target Score Intensive diagnostic application form
+       3. EMAIL FORM   — connect the opt-in to MailerLite / Sender
+       4. IMG-xx       — replace OG/social image
+       5. Reviews      — swap placeholder reviews for real handles + links
+     ============================================================ -->
+
+<title>TOEFL iBT 2026 Course — Built From Scratch for the New Format | Aidoss Academy</title>
+<meta name="description" content="The full TOEFL iBT 2026 website course: 86 focused lessons, 16 Module-End Skill Tests, audio, PDFs, and optional teacher feedback. Three one-time plans from $79. Built from scratch for the new 2026 format." />
+
+<!-- Open Graph / social -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="TOEFL iBT 2026 — Built From Scratch for the New Format | Aidoss" />
-<meta property="og:description" content="Full TOEFL iBT 2026 website course, 16 module-end skill tests, premium resources, audio, PDFs, and a $25 Complete Mock Exams or Aidoss Library credit for $79 one-time." />
+<meta property="og:title" content="TOEFL iBT 2026 Course — Built From Scratch for the New Format" />
+<meta property="og:description" content="86 focused lessons, 16 Module-End Skill Tests, audio and PDFs, with optional teacher feedback. Three one-time plans from $79." />
 <meta property="og:url" content="https://aidossacademy.com/" />
+<!-- EDIT: replace og:image with IMG-OG 1200x630 -->
 <meta property="og:image" content="https://aidossacademy.com/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2314344b'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' fill='%23efece7' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
 <style>
-/* ============ DESIGN TOKENS ============ */
-:root{
-  --navy:#14344b;          /* brand navy (from logo) */
-  --navy-900:#0d2434;
-  --navy-700:#1d4a68;
-  --navy-50:#eef3f6;
-  --cream:#efece7;         /* brand cream (from logo) */
-  --cream-50:#f7f5f0;
-  --paper:#ffffff;
-  --gold:#d8a53e;          /* tassel gold accent */
-  --gold-600:#c08f2c;
-  --gold-100:#f6ecd4;
-  --ink:#16242f;
-  --muted:#5c6b76;
-  --line:#e5ded2;
-  --green:#2f8f5b;
-  --star:#f3b21b;
-  --logo:url("data:image/jpeg;base64,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");
-}
+  :root{
+    --navy:#14344B; --navy-700:#1D4A68; --navy-900:#0E2638;
+    --gold:#B88F2C; --gold-600:#9A7524; --gold-hi:#E3B450; --gold-ink:#5A2A06;
+    --cream:#F7F5F0; --cream-50:#FAF9F5;
+    --ink:#26323B; --muted:#6B7A86; --line:#E7E1D6;
+    --shadow:0 18px 40px -22px rgba(20,52,75,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+    color:var(--ink); background:var(--cream-50);
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;line-height:1.12;color:var(--navy);font-weight:600;letter-spacing:-.01em}
+  h1{font-size:clamp(2rem,4.4vw,3.2rem)}
+  h2{font-size:clamp(1.7rem,3.6vw,2.7rem)}
+  h3{font-size:clamp(1.15rem,2vw,1.4rem)}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1160px,92vw);margin-inline:auto}
+  section{padding:clamp(48px,7vw,92px) 0}
+  .eyebrow{font-family:'Plus Jakarta Sans';font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;color:var(--gold-600)}
+  .lede{font-size:clamp(1rem,1.5vw,1.16rem);color:var(--muted);max-width:62ch;margin-inline:auto}
+  .center{text-align:center}
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
-  color:var(--ink); background:var(--cream-50);
-  line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
-}
-h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;line-height:1.12;color:var(--navy);font-weight:600;letter-spacing:-.01em}
-h2{font-size:clamp(1.7rem,3.6vw,2.7rem)}
-h3{font-size:clamp(1.15rem,2vw,1.4rem)}
-p{color:#33424d}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{width:min(1160px,92vw);margin-inline:auto}
-.center{text-align:center}
-section{padding:clamp(48px,7vw,92px) 0}
-.eyebrow{font-family:'Plus Jakarta Sans';font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;color:var(--gold-600)}
-.lede{font-size:clamp(1rem,1.5vw,1.16rem);color:#42525e;max-width:62ch;margin-inline:auto}
+  /* buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:1rem;
+    padding:.95em 1.5em;border-radius:999px;border:2px solid transparent;cursor:pointer;
+    transition:transform .15s ease,box-shadow .15s ease,background .15s ease;white-space:nowrap;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-gold{background:var(--gold);color:var(--gold-ink);box-shadow:0 8px 22px -8px rgba(184,143,44,.75)}
+  .btn-gold:hover{background:var(--gold-hi);box-shadow:0 12px 28px -8px rgba(184,143,44,.9);transform:translateY(-2px)}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-700);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--navy);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--navy);background:#fff}
+  .btn-lg{font-size:1.08rem;padding:1.05em 1.8em}
+  .btn-ghost-light{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.4)}
+  .btn-ghost-light:hover{background:rgba(255,255,255,.2)}
 
-/* ---- buttons ---- */
-.btn{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:1rem;
-  padding:.95em 1.5em;border-radius:999px;border:2px solid transparent;cursor:pointer;
-  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;white-space:nowrap}
-.btn:active{transform:translateY(1px)}
-.btn-gold{background:var(--gold);color:#3a2a06;box-shadow:0 8px 22px -8px rgba(184,143,44,.75)}
-.btn-gold:hover{background:#e3b450;box-shadow:0 12px 28px -8px rgba(184,143,44,.9);transform:translateY(-2px)}
-.btn-navy{background:var(--navy);color:#fff}
-.btn-navy:hover{background:var(--navy-700);transform:translateY(-2px)}
-.btn-outline{background:transparent;color:var(--navy);border-color:#c9cfd3}
-.btn-outline:hover{border-color:var(--navy);background:#fff}
-.btn-lg{font-size:1.08rem;padding:1.05em 1.8em}
-.btn-ghost-light{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.4)}
-.btn-ghost-light:hover{background:rgba(255,255,255,.2)}
+  /* announcement */
+  .announce{
+    background:var(--navy-900);color:#F1ECE3;font-size:.86rem;font-weight:500;
+    display:flex;align-items:center;justify-content:center;gap:.7em;flex-wrap:wrap;
+    padding:.55em 1em;text-align:center;
+  }
+  .announce b{color:var(--gold-hi)}
 
-/* ---- announcement bar ---- */
-.topbar{background:var(--navy-900);color:#f1ece3;font-size:.86rem;font-weight:500;
-  display:flex;align-items:center;justify-content:center;gap:.7em;flex-wrap:wrap;
-  padding:.55em 1em;text-align:center}
-.topbar b{color:var(--gold)}
-.countdown{display:inline-flex;gap:.3em;font-variant-numeric:tabular-nums;font-weight:700;color:#fff}
-.countdown span{background:rgba(255,255,255,.12);border-radius:6px;padding:.05em .4em;min-width:2.1em;display:inline-block;text-align:center}
+  /* header */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(247,245,240,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:box-shadow .2s}
+  header.site.scrolled{box-shadow:0 6px 24px -16px rgba(20,52,75,.5)}
+  .hd{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:'Fraunces',serif;font-weight:700;color:var(--navy);font-size:1.18rem;letter-spacing:.02em}
+  .brand .mark{width:42px;height:42px;border-radius:11px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex:0 0 auto;box-shadow:0 2px 8px -3px rgba(20,52,75,.4)}
+  .brand small{display:block;font-family:'Plus Jakarta Sans';font-weight:600;font-size:.6rem;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;margin-top:-2px}
+  .nav{display:flex;gap:1.6rem;align-items:center}
+  .nav .navlink{font-weight:600;font-size:.94rem;color:var(--navy)}
+  .nav .navlink:hover{color:var(--gold-600)}
+  .nav .btn-navy{color:#fff}
+  @media(max-width:860px){.nav .navlink{display:none}}
 
-/* ---- header ---- */
-header.nav{position:sticky;top:0;z-index:50;background:rgba(247,245,240,.86);backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);transition:box-shadow .2s}
-header.nav.scrolled{box-shadow:0 6px 24px -16px rgba(20,52,75,.5)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
-.brand{display:flex;align-items:center;gap:.6rem;font-family:'Fraunces',serif;font-weight:700;color:var(--navy);font-size:1.18rem;letter-spacing:.02em}
-.brand .mark{width:42px;height:42px;border-radius:11px;background:var(--cream) var(--logo) center/118% no-repeat;flex:0 0 auto;box-shadow:0 2px 8px -3px rgba(20,52,75,.4)}
-.brand small{display:block;font-family:'Plus Jakarta Sans';font-weight:600;font-size:.6rem;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;margin-top:-2px}
-.nav-links{display:flex;gap:1.6rem;align-items:center}
-.nav-links a{font-weight:600;font-size:.94rem;color:#33424d}
-.nav-links a:hover{color:var(--navy)}
-.nav-cta{display:flex;align-items:center;gap:.8rem}
-.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:.4rem}
-.menu-btn svg{width:26px;height:26px;stroke:var(--navy)}
+  /* hero */
+  .hero{background:
+      radial-gradient(1100px 460px at 78% -10%,rgba(184,143,44,.14),transparent 60%),
+      linear-gradient(180deg,var(--cream),var(--cream-50))}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,4vw,3.6rem);align-items:center}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+  .hero h1{margin:.5rem 0 .8rem}
+  .hero .sub{font-size:clamp(1.02rem,1.6vw,1.2rem);color:var(--muted);max-width:52ch}
+  .hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.6rem 0 1.1rem}
+  .trust{display:flex;gap:1.2rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem;font-weight:600}
+  .trust span{display:inline-flex;align-items:center;gap:.4em}
+  .trust b{color:var(--navy)}
 
-/* ---- hero ---- */
-.hero{background:
-  radial-gradient(1100px 520px at 88% -8%,rgba(216,165,62,.16),transparent 60%),
-  radial-gradient(900px 600px at 5% 110%,rgba(20,52,75,.07),transparent 55%),
-  var(--cream-50);
-  padding-top:clamp(36px,5vw,64px)}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,4vw,56px);align-items:center}
-.hero h1{font-size:clamp(2.1rem,4.6vw,3.5rem);font-weight:700;margin:.5rem 0 .9rem}
-.hero h1 .hl{color:var(--gold-600);font-style:italic}
-.hero p.sub{font-size:clamp(1.02rem,1.5vw,1.2rem);color:#3c4c58;max-width:50ch}
-.pill{display:inline-flex;align-items:center;gap:.5em;background:#fff;border:1px solid var(--line);
-  color:var(--navy);font-weight:700;font-size:.8rem;padding:.45em .9em;border-radius:999px;box-shadow:0 4px 14px -10px rgba(20,52,75,.5)}
-.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(47,143,91,.18)}
-.rating-row{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;margin:1.4rem 0}
-.stars{color:var(--star);letter-spacing:1px;font-size:1.05rem}
-.rating-row .meta{font-size:.86rem;color:var(--muted);font-weight:600}
-.rating-row .div{width:1px;height:26px;background:var(--line)}
-.cta-stack{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;margin-top:.4rem}
-.price-tag{display:flex;align-items:baseline;gap:.5em;margin-top:.2rem}
-.price-now{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;color:var(--navy)}
-.price-old{color:var(--muted);text-decoration:line-through;font-weight:600}
-.price-off{background:var(--gold-100);color:var(--gold-600);font-weight:800;font-size:.72rem;padding:.2em .6em;border-radius:6px;letter-spacing:.04em}
-.assure{display:flex;gap:1.1rem;flex-wrap:wrap;margin-top:1.2rem;font-size:.82rem;color:var(--muted);font-weight:600}
-.assure span{display:inline-flex;align-items:center;gap:.4em}
-.assure svg{width:15px;height:15px;stroke:var(--green)}
+  /* hero card (course snapshot — NOT a marketplace listing) */
+  .snap{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+  .snap-top{background:linear-gradient(135deg,var(--navy),var(--navy-700));color:#fff;padding:1.3rem 1.4rem}
+  .snap-top .tag{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-hi)}
+  .snap-top h3{color:#fff;margin:.25rem 0 .1rem;font-size:1.22rem}
+  .snap-top p{font-size:.86rem;color:#D7E0E8}
+  .snap-body{padding:1.1rem 1.4rem 1.3rem}
+  .snap-row{display:flex;align-items:center;gap:.7rem;padding:.5rem 0;border-bottom:1px dashed var(--line);font-size:.94rem;font-weight:600;color:var(--navy)}
+  .snap-row:last-child{border-bottom:0}
+  .snap-row .ic{width:26px;height:26px;border-radius:7px;background:var(--cream);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .snap-foot{margin-top:.6rem;display:flex;align-items:baseline;gap:.5rem}
+  .snap-foot .now{font-family:'Fraunces',serif;font-weight:700;font-size:1.7rem;color:var(--navy)}
+  .snap-foot .off{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-600)}
 
-/* hero visual / course card */
-.hero-visual{position:relative}
-.course-card{background:#fff;border-radius:22px;border:1px solid var(--line);overflow:hidden;
-  box-shadow:0 30px 60px -28px rgba(20,52,75,.5)}
-.cc-media{position:relative;aspect-ratio:16/10;background:
-  linear-gradient(135deg,var(--navy),var(--navy-700));display:flex;align-items:center;justify-content:center}
-.cc-play{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px -8px rgba(0,0,0,.5)}
-.cc-play svg{width:26px;height:26px;fill:var(--navy);margin-left:3px}
-.cc-tag{position:absolute;top:12px;left:12px;background:var(--gold);color:#3a2a06;font-weight:800;font-size:.7rem;padding:.3em .7em;border-radius:7px;letter-spacing:.03em}
-.cc-body{padding:1.1rem 1.2rem 1.3rem}
-.cc-body h4{font-family:'Plus Jakarta Sans';font-weight:800;color:var(--navy);font-size:1.02rem;line-height:1.3}
-.cc-meta{display:flex;align-items:center;gap:.5rem;margin:.5rem 0 .7rem;font-size:.82rem;color:var(--muted)}
-.cc-meta .stars{font-size:.92rem}
-.cc-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:.8rem}
-.cc-foot .p{font-family:'Fraunces',serif;font-weight:700;color:var(--navy);font-size:1.15rem}
-.cc-foot .p s{color:var(--muted);font-weight:400;font-size:.85rem;margin-left:.3em}
-.float-badge{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:.6rem .8rem;
-  box-shadow:0 16px 34px -18px rgba(20,52,75,.55);display:flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:700;color:var(--navy)}
-.float-badge .ic{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:var(--navy-50)}
-.float-badge .ic svg{width:18px;height:18px;stroke:var(--navy);fill:none}
-.fb-1{top:-18px;right:-14px;animation:floaty 5s ease-in-out infinite}
-.fb-2{bottom:-20px;left:-16px;animation:floaty 6s ease-in-out infinite .5s}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  /* pillars */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.2rem}
+  @media(max-width:820px){.pillars{grid-template-columns:1fr}}
+  .pillar{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.4rem}
+  .pillar .num{display:inline-flex;width:34px;height:34px;border-radius:9px;background:var(--cream);color:var(--gold-600);font-family:'Fraunces',serif;font-weight:700;align-items:center;justify-content:center;margin-bottom:.6rem}
+  .pillar h3{font-size:1.12rem;margin-bottom:.3rem}
+  .pillar p{font-size:.94rem;color:var(--muted)}
 
-/* ---- trust strip ---- */
-.trust{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.trust-in{padding:30px 0}
-.trust .label{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.1rem}
-.uni-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(1.2rem,4vw,3rem)}
-.uni{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(.95rem,1.6vw,1.18rem);color:#9aa6ad;letter-spacing:.01em;display:flex;align-items:center;gap:.45rem;filter:saturate(.2)}
-.uni svg{width:20px;height:20px;stroke:#9aa6ad;fill:none}
-.badge-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem;margin-top:1.4rem}
-.tbadge{display:inline-flex;align-items:center;gap:.45em;background:var(--cream-50);border:1px solid var(--line);
-  border-radius:999px;padding:.45em .9em;font-size:.8rem;font-weight:700;color:var(--navy)}
-.tbadge svg{width:15px;height:15px;stroke:var(--gold-600);fill:none}
+  /* feature grid */
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.2rem}
+  @media(max-width:820px){.features{grid-template-columns:1fr}}
+  .feat{display:flex;gap:.9rem;background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.15rem}
+  .feat .ic{width:40px;height:40px;border-radius:10px;background:var(--cream);color:var(--gold-600);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .feat h3{font-size:1.04rem;margin-bottom:.15rem}
+  .feat p{font-size:.9rem;color:var(--muted)}
+  .stat-strip{display:flex;gap:2.4rem;flex-wrap:wrap;justify-content:center;margin-top:2.4rem}
+  .stat-line{text-align:center}
+  .stat-line b{display:block;font-family:'Fraunces',serif;font-size:2rem;color:var(--navy)}
+  .stat-line span{font-size:.86rem;color:var(--muted);font-weight:600}
 
-/* ---- problem / pillars ---- */
-.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.2rem}
-.pain{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.5rem}
-.pain .x{width:38px;height:38px;border-radius:10px;background:#fdeceb;display:flex;align-items:center;justify-content:center;margin-bottom:.9rem}
-.pain .x svg{width:20px;height:20px;stroke:#d4534b}
-.pain h3{font-size:1.08rem;font-family:'Plus Jakarta Sans';font-weight:800}
-.pain p{font-size:.92rem;margin-top:.35rem}
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:2.4rem}
-.pillar{background:linear-gradient(180deg,#fff,#fbfaf6);border:1px solid var(--line);border-radius:18px;padding:1.7rem 1.5rem;position:relative}
-.pillar .num{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:var(--gold-600);background:var(--gold-100);width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
-.pillar h3{font-size:1.16rem}
-.pillar p{font-size:.94rem;margin-top:.5rem}
+  /* modules accordion */
+  .modules{max-width:780px;margin:2rem auto 0}
+  .mod{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:.7rem;overflow:hidden}
+  .mod summary{display:flex;align-items:center;gap:1rem;padding:1.05rem 1.2rem;cursor:pointer;list-style:none}
+  .mod summary::-webkit-details-marker{display:none}
+  .mnum{width:32px;height:32px;border-radius:8px;background:var(--navy);color:#fff;font-family:'Fraunces',serif;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .mtitle{flex:1}
+  .mtitle b{display:block;color:var(--navy);font-size:1.04rem}
+  .mtitle span{font-size:.9rem;color:var(--muted)}
+  .chev{width:20px;height:20px;color:var(--muted);transition:transform .2s}
+  .mod[open] .chev{transform:rotate(180deg)}
+  .mod .mbody{padding:0 1.2rem 1.1rem 3.2rem;font-size:.94rem;color:var(--muted)}
 
-/* ---- features ---- */
-.features{background:var(--navy);color:#eaf0f4;position:relative}
-.features h2,.features .eyebrow{color:#fff}
-.features .eyebrow{color:var(--gold)}
-.features .lede{color:#bcccd6}
-.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.6rem}
-.feat{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.4rem}
-.feat .ic{width:46px;height:46px;border-radius:12px;background:rgba(216,165,62,.16);display:flex;align-items:center;justify-content:center;margin-bottom:.9rem}
-.feat .ic svg{width:23px;height:23px;stroke:var(--gold);fill:none}
-.feat h3{color:#fff;font-family:'Plus Jakarta Sans';font-weight:800;font-size:1rem}
-.feat p{color:#aebecb;font-size:.86rem;margin-top:.3rem}
+  /* PLANS */
+  .plans{background:linear-gradient(180deg,var(--cream),var(--cream-50))}
+  .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.4rem;align-items:stretch}
+  @media(max-width:920px){.plan-grid{grid-template-columns:1fr;max-width:460px;margin-inline:auto}}
+  .plan{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.6rem 1.5rem;box-shadow:0 12px 30px -24px rgba(20,52,75,.5)}
+  .plan.feature{border-color:var(--gold);box-shadow:0 22px 48px -22px rgba(184,143,44,.65);transform:translateY(-6px)}
+  @media(max-width:920px){.plan.feature{transform:none}}
+  .plan .ribbon{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--gold-ink);font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.35em .9em;border-radius:999px;white-space:nowrap}
+  .plan .pname{font-family:'Fraunces',serif;font-weight:700;font-size:1.32rem;color:var(--navy)}
+  .plan .pfor{font-size:.86rem;color:var(--muted);min-height:2.6em;margin-top:.15rem}
+  .plan .pprice{display:flex;align-items:baseline;gap:.45rem;margin:.7rem 0 .2rem}
+  .plan .pprice .amt{font-family:'Fraunces',serif;font-weight:700;font-size:2.3rem;color:var(--navy)}
+  .plan .pprice .per{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-600)}
+  .plan .pnt{font-size:.8rem;color:var(--muted);margin-bottom:1rem}
+  .plan ul{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin:.4rem 0 1.3rem}
+  .plan li{display:flex;gap:.6rem;font-size:.92rem;align-items:flex-start}
+  .plan li svg{width:18px;height:18px;color:var(--gold-600);flex:0 0 auto;margin-top:.18rem}
+  .plan li.muted{color:var(--muted)}
+  .plan li.muted svg{color:var(--line)}
+  .plan .btn{width:100%;justify-content:center;margin-top:auto}
 
-/* ---- curriculum ---- */
-.curric{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,56px);align-items:start}
-.mod{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:.7rem;overflow:hidden}
-.mod summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:1rem;padding:1.1rem 1.2rem}
-.mod summary::-webkit-details-marker{display:none}
-.mod .mnum{flex:0 0 auto;width:40px;height:40px;border-radius:11px;background:var(--navy);color:#fff;font-family:'Fraunces',serif;font-weight:700;display:flex;align-items:center;justify-content:center}
-.mod .mtitle{flex:1}
-.mod .mtitle b{display:block;color:var(--navy);font-weight:800;font-size:1.02rem}
-.mod .mtitle span{font-size:.83rem;color:var(--muted)}
-.mod .chev{transition:transform .2s;stroke:var(--navy);width:20px;height:20px;fill:none}
-.mod[open] .chev{transform:rotate(180deg)}
-.mod .mbody{padding:0 1.2rem 1.2rem 4.2rem;font-size:.92rem;color:#41515d}
-.mod .mbody li{margin:.2rem 0;list-style:none;padding-left:1.3em;position:relative}
-.mod .mbody li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
-.curric-aside{background:linear-gradient(160deg,var(--navy),var(--navy-900));border-radius:20px;padding:1.8rem;color:#dce6ec;position:sticky;top:90px}
-.curric-aside h3{color:#fff;font-size:1.3rem}
-.stat-line{display:flex;align-items:center;gap:.7rem;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.95rem}
-.stat-line:last-child{border-bottom:0}
-.stat-line b{font-family:'Fraunces',serif;color:var(--gold);font-size:1.5rem;min-width:2.4em}
-.stat-line span{color:#cdd9e1}
+  /* comparison table */
+  .cmp{max-width:880px;margin:2.6rem auto 0;overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:#fff}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:.9rem}
+  th,td{padding:.7rem .9rem;text-align:center;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left;font-weight:600;color:var(--navy)}
+  thead th{background:var(--cream);font-family:'Fraunces',serif;color:var(--navy);font-size:.98rem}
+  thead th.hl{color:var(--gold-600)}
+  tbody tr:last-child td{border-bottom:0}
+  td .yes{color:var(--gold-600);font-weight:800}
+  td .no{color:#C2BDB2}
 
-/* ---- mock band ---- */
-.mock{background:var(--cream)}
-.mock-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,52px);align-items:center}
-.checks{margin-top:1.3rem;display:grid;gap:.7rem}
-.checks li{list-style:none;display:flex;gap:.7rem;align-items:flex-start;font-weight:600;color:#28333c}
-.checks svg{flex:0 0 auto;width:22px;height:22px;stroke:#fff;fill:none;background:var(--green);border-radius:50%;padding:4px;margin-top:1px}
+  /* intensive */
+  .intensive{max-width:880px;margin:2rem auto 0;background:var(--navy);color:#fff;border-radius:18px;padding:1.7rem 1.8rem;display:grid;grid-template-columns:1.5fr 1fr;gap:1.4rem;align-items:center}
+  @media(max-width:760px){.intensive{grid-template-columns:1fr;text-align:center}}
+  .intensive h3{color:#fff;font-size:1.3rem}
+  .intensive .badge{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-hi)}
+  .intensive p{font-size:.92rem;color:#D7E0E8;margin-top:.35rem}
+  .intensive .ip{display:flex;flex-direction:column;align-items:flex-end;gap:.7rem}
+  @media(max-width:760px){.intensive .ip{align-items:center}}
+  .intensive .ip .amt{font-family:'Fraunces',serif;font-weight:700;font-size:2.1rem}
 
-/* ---- instructor ---- */
-.instr-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,4vw,52px);align-items:center}
-.creds{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.2rem 0}
-.cred{display:inline-flex;align-items:center;gap:.45em;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.5em .8em;font-size:.84rem;font-weight:700;color:var(--navy)}
-.cred svg{width:16px;height:16px;stroke:var(--gold-600);fill:none}
-.instr-quote{border-left:3px solid var(--gold);padding-left:1.1rem;margin-top:1.3rem;font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;color:var(--navy)}
+  /* reviews */
+  .reviews{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2.2rem}
+  @media(max-width:920px){.reviews{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.reviews{grid-template-columns:1fr}}
+  .review{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.2rem}
+  .stars{color:var(--gold);letter-spacing:.1em;font-size:.9rem}
+  .review p{font-size:.92rem;margin:.5rem 0 .8rem}
+  .who{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--muted);font-weight:600}
+  .who .av{width:30px;height:30px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--gold-600);font-weight:700;font-family:'Fraunces',serif}
 
-/* ---- reviews ---- */
-.rev-head{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:1.3rem}
-.rev-score{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:700;color:var(--navy)}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.4rem}
-.review{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.4rem;box-shadow:0 12px 30px -24px rgba(20,52,75,.6)}
-.review .stars{font-size:.95rem;margin-bottom:.6rem}
-.review p{font-size:.93rem;color:#33424d}
-.review .who{display:flex;align-items:center;gap:.7rem;margin-top:1rem}
-.review .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--navy-700),var(--navy));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;flex:0 0 auto}
-.review .who b{display:block;font-size:.9rem;color:var(--navy)}
-.review .who span{font-size:.78rem;color:var(--muted)}
-.review .jump{margin-left:auto;background:var(--gold-100);color:var(--gold-600);font-weight:800;font-size:.74rem;padding:.25em .6em;border-radius:7px;white-space:nowrap}
-.infl{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2.4rem;padding-top:1.6rem;border-top:1px dashed var(--line)}
-.infl .ttl{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.infl .avis{display:flex}
-.infl .avis .av{width:40px;height:40px;border-radius:50%;border:2px solid #fff;background:linear-gradient(135deg,#7a8a96,var(--navy-700));margin-left:-10px;box-shadow:0 2px 8px -3px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;font-weight:700}
-.infl .avis .av:first-child{margin-left:0}
+  /* opt-in */
+  .optin{background:var(--navy);color:#fff;border-radius:22px;padding:clamp(1.8rem,4vw,3rem);text-align:center;max-width:760px;margin-inline:auto}
+  .optin h2{color:#fff}
+  .optin p{color:#D7E0E8;max-width:48ch;margin:.6rem auto 1.3rem}
+  .optin form{display:flex;gap:.6rem;max-width:440px;margin:0 auto;flex-wrap:wrap}
+  .optin input{flex:1;min-width:200px;padding:.9em 1.1em;border-radius:999px;border:2px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:#fff;font-size:1rem;font-family:inherit}
+  .optin input::placeholder{color:#B9C5CF}
+  .optin small{display:block;margin-top:.8rem;color:#9FB0BC;font-size:.78rem}
 
-/* ---- offer ---- */
-.offer{background:linear-gradient(160deg,var(--navy-900),var(--navy));color:#fff}
-.offer .eyebrow{color:var(--gold)}
-.offer h2{color:#fff}
-.offer-card{max-width:560px;margin:2.2rem auto 0;background:#fff;border-radius:22px;padding:clamp(1.5rem,3vw,2.4rem);color:var(--ink);
-  box-shadow:0 40px 80px -30px rgba(0,0,0,.6);position:relative;overflow:hidden}
-.offer-card::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--gold),#e9c879)}
-.offer-card .ribbon{display:inline-block;background:var(--gold-100);color:var(--gold-600);font-weight:800;font-size:.76rem;padding:.35em .8em;border-radius:8px;letter-spacing:.04em}
-.offer-price{display:flex;align-items:baseline;gap:.6rem;margin:1rem 0 .3rem}
-.offer-price .now{font-family:'Fraunces',serif;font-size:3rem;font-weight:700;color:var(--navy);line-height:1}
-.offer-price .old{text-decoration:line-through;color:var(--muted);font-weight:600;font-size:1.2rem}
-.offer-price .off{background:var(--navy);color:#fff;font-weight:800;font-size:.78rem;padding:.3em .6em;border-radius:7px}
-.offer-card .sub{font-size:.86rem;color:var(--muted)}
-.incl{display:grid;gap:.55rem;margin:1.4rem 0}
-.incl li{list-style:none;display:flex;gap:.6rem;align-items:flex-start;font-size:.92rem;font-weight:600;color:#2b3942}
-.incl svg{flex:0 0 auto;width:20px;height:20px;stroke:var(--green);fill:none;margin-top:1px}
-.offer-card .btn{width:100%;justify-content:center}
-.offer-card .guarantee{display:flex;align-items:center;gap:.5rem;justify-content:center;margin-top:1rem;font-size:.82rem;color:var(--muted);font-weight:600}
-.offer-card .guarantee svg{width:18px;height:18px;stroke:var(--green);fill:none}
-.offer-note{text-align:center;margin-top:1.6rem;font-size:.9rem;color:#bcccd6}
-.offer-note a{color:var(--gold);font-weight:700;text-decoration:underline}
+  /* faq */
+  .faq{max-width:780px;margin:2rem auto 0}
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:13px;margin-bottom:.7rem;padding:.2rem .4rem}
+  .faq summary{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.1rem;cursor:pointer;font-weight:700;color:var(--navy);list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq .plus{position:relative;width:18px;height:18px;flex:0 0 auto}
+  .faq .plus::before,.faq .plus::after{content:"";position:absolute;background:var(--gold-600);border-radius:2px}
+  .faq .plus::before{left:8px;top:0;width:2px;height:18px;transition:transform .2s}
+  .faq .plus::after{top:8px;left:0;height:2px;width:18px}
+  .faq details[open] .plus::before{transform:scaleY(0)}
+  .faq .a{padding:0 1.1rem 1.1rem;color:var(--muted);font-size:.94rem}
 
-/* ---- email capture ---- */
-.optin{background:var(--cream)}
-.optin-card{display:grid;grid-template-columns:1.3fr .9fr;gap:clamp(24px,4vw,48px);align-items:center;
-  background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(1.6rem,3vw,2.6rem);
-  box-shadow:0 24px 50px -34px rgba(20,52,75,.6)}
-.optin h2{font-size:clamp(1.5rem,2.8vw,2.1rem)}
-.optin form{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.2rem}
-.optin input[type=email]{flex:1;min-width:200px;padding:.95em 1.1em;border:2px solid var(--line);border-radius:12px;font-size:1rem;font-family:inherit}
-.optin input[type=email]:focus{outline:none;border-color:var(--gold)}
-.optin .formnote{font-size:.78rem;color:var(--muted);margin-top:.7rem}
-.optin .ok{display:none;background:#eaf7ef;border:1px solid #b6e2c7;color:#1d6e41;border-radius:12px;padding:1em;font-weight:700;margin-top:1rem}
-.magnet{position:relative}
-.pdf-mock{aspect-ratio:3/4;border-radius:14px;background:linear-gradient(160deg,var(--navy),var(--navy-700));
-  box-shadow:0 24px 50px -20px rgba(20,52,75,.7);padding:1.4rem;color:#fff;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-3deg)}
-.pdf-mock .tag{font-size:.7rem;font-weight:800;letter-spacing:.12em;color:var(--gold);text-transform:uppercase}
-.pdf-mock h4{color:#fff;font-size:1.25rem;line-height:1.15}
-.pdf-mock .free{align-self:flex-start;background:var(--gold);color:#3a2a06;font-weight:800;font-size:.74rem;padding:.3em .7em;border-radius:7px}
+  /* final cta */
+  .final{background:
+      radial-gradient(800px 320px at 50% 120%,rgba(184,143,44,.18),transparent 60%),
+      var(--navy-900);color:#fff;text-align:center}
+  .final h2{color:#fff}
+  .final p{color:#D7E0E8;max-width:48ch;margin:.7rem auto 1.5rem}
+  .final-cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
 
-/* ---- faq ---- */
-.faq-list{max-width:780px;margin:2.4rem auto 0}
-.qa{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:.7rem;overflow:hidden}
-.qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.15rem 1.3rem;font-weight:700;color:var(--navy);font-size:1.02rem}
-.qa summary::-webkit-details-marker{display:none}
-.qa .plus{flex:0 0 auto;width:22px;height:22px;position:relative;transition:transform .2s}
-.qa .plus::before,.qa .plus::after{content:"";position:absolute;background:var(--gold-600);border-radius:2px}
-.qa .plus::before{top:50%;left:0;right:0;height:2px;transform:translateY(-50%)}
-.qa .plus::after{left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);transition:opacity .2s}
-.qa[open] .plus::after{opacity:0}
-.qa .a{padding:0 1.3rem 1.3rem;color:#41515d;font-size:.95rem}
+  /* sticky cta */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(14,38,56,.96);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 5vw;transform:translateY(120%);transition:transform .3s ease}
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta .sp{font-weight:700;font-size:.95rem}
+  .sticky-cta .sp small{display:block;font-weight:500;color:var(--gold-hi);font-size:.8rem}
+  @media(max-width:560px){.sticky-cta .sp small{display:inline;margin-left:.4rem}}
 
-/* ---- final cta ---- */
-.final{background:
-  radial-gradient(700px 380px at 80% 0,rgba(216,165,62,.18),transparent 60%),var(--navy-900);
-  color:#fff;text-align:center}
-.final h2{color:#fff;font-size:clamp(1.9rem,4vw,3rem)}
-.final p{color:#bccbd6;max-width:54ch;margin:1rem auto 1.8rem}
-.final .cta-stack{justify-content:center}
-
-/* ---- footer ---- */
-footer{background:var(--navy-900);color:#a9bccb;font-size:.9rem;padding:56px 0 28px}
-.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem}
-.foot-brand .brand{color:#fff}
-.foot-brand .mark{box-shadow:none}
-.foot-brand p{color:#90a6b6;margin-top:.9rem;max-width:34ch;font-size:.88rem}
-footer h5{color:#fff;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.9rem;font-weight:800;font-family:'Plus Jakarta Sans'}
-footer ul{list-style:none;display:grid;gap:.5rem}
-footer a:hover{color:#fff}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2.4rem;padding-top:1.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.8rem;color:#7e95a6}
-.foot-legal{max-width:62ch}
-
-/* ---- sticky mobile CTA ---- */
-.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
-  background:rgba(13,36,52,.97);backdrop-filter:blur(8px);padding:.7rem .9rem;
-  align-items:center;justify-content:space-between;gap:.8rem;box-shadow:0 -8px 24px -12px rgba(0,0,0,.6)}
-.sticky-cta .sp{color:#fff;font-size:.84rem;font-weight:700;line-height:1.2}
-.sticky-cta .sp s{color:#8fa6b6;font-weight:500;margin-left:.3em}
-.sticky-cta .sp small{display:block;color:var(--gold);font-size:.72rem}
-.sticky-cta .btn{padding:.8em 1.2em;font-size:.95rem}
-
-/* ============ RESPONSIVE ============ */
-@media(max-width:960px){
-  .hero-grid{grid-template-columns:1fr;gap:40px}
-  .hero-visual{max-width:440px;margin:0 auto}
-  .feat-grid{grid-template-columns:repeat(2,1fr)}
-  .curric{grid-template-columns:1fr}
-  .curric-aside{position:static}
-  .mock-grid,.instr-grid,.optin-card{grid-template-columns:1fr}
-  .instr-media{max-width:360px}
-  .problem-grid,.pillars,.rev-grid{grid-template-columns:1fr}
-  .foot-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:680px){
-  .nav-links{display:none}
-  .menu-btn{display:block}
-  .nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
-    background:#fff;border-bottom:1px solid var(--line);padding:1rem 6vw;gap:1rem;box-shadow:0 20px 30px -20px rgba(20,52,75,.5)}
-  .nav-cta .btn-navy{display:none}
-  .feat-grid{grid-template-columns:1fr 1fr}
-  .foot-grid{grid-template-columns:1fr;gap:1.6rem}
-  .sticky-cta{display:flex}
-  body{padding-bottom:72px}
-  .hero .cta-stack .btn{width:100%;justify-content:center}
-  .float-badge{display:none}
-}
-.imgnote{font-size:.68rem;color:var(--muted);opacity:.0;position:absolute}
+  /* footer */
+  footer.site{background:var(--navy-900);color:#C7D2DB;padding:2.6rem 0 2rem}
+  .foot-grid{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start}
+  .foot-brand{font-family:'Fraunces',serif;color:#fff;font-size:1.2rem;font-weight:700}
+  .foot-links{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.9rem}
+  .foot-links a:hover{color:var(--gold-hi)}
+  .disclaimer{margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;color:#8FA0AC;max-width:90ch}
 </style>
 </head>
 <body>
 
-<!-- ===== ANNOUNCEMENT BAR ===== -->
-<div class="topbar">
-  <span>🎓 Built for the <b>NEW January&nbsp;2026 TOEFL iBT</b> format</span>
+<!-- ===== ANNOUNCEMENT ===== -->
+<div class="announce">
+  <span>TOEFL iBT 2026 — built from scratch for the new format.</span>
   <span aria-hidden="true">·</span>
-  <span>Self-Study: <b>$79 one-time</b></span>
+  <span>Three ways to study: <b>from $79 one-time</b></span>
 </div>
 
 <!-- ===== HEADER ===== -->
-<header class="nav" id="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="#top" aria-label="Aidoss English Academy home">
-      <span class="mark" role="img" aria-label="Aidoss owl logo"></span>
-      <span>AIDOSS<small>English Academy</small></span>
+<header class="site" id="top">
+  <div class="wrap hd">
+    <a class="brand" href="#top">
+      <span class="mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 7l9-4 9 4-9 4-9-4z" fill="#E3B450"/><path d="M7 10v4c0 1.5 2.2 3 5 3s5-1.5 5-3v-4" stroke="#F7F5F0" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M21 11v4" stroke="#E3B450" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </span>
+      <span>Aidoss Academy<small>TOEFL iBT 2026</small></span>
     </a>
-    <nav class="nav-links" id="navlinks">
-      <a href="#why">Why Aidoss</a>
-      <a href="#curriculum">Curriculum</a>
-      <a href="#mocks">Mock tests</a>
-      <a href="#instructor">Instructor</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
+    <nav class="nav">
+      <a class="navlink" href="#system">The course</a>
+      <a class="navlink" href="#modules">What's inside</a>
+      <a class="navlink" href="#plans">Plans</a>
+      <a class="navlink" href="#faq">FAQ</a>
+      <!-- EDIT: CHECKOUT_URL / anchor -->
+      <a class="btn btn-navy" href="#plans">See plans</a>
     </nav>
-    <div class="nav-cta">
-      <a href="#offer" class="btn btn-navy" style="padding:.6em 1.1em;font-size:.92rem">Start Self-Study</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-    </div>
   </div>
 </header>
-
-<a id="top"></a>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <span class="pill"><span class="dot"></span> TOEFL iBT 2026 · Built from scratch for the new format</span>
-      <h1>The TOEFL&nbsp;iBT&nbsp;2026 course, built from scratch for the <span class="hl">new format</span>.</h1>
-      <p class="sub">The full TOEFL iBT 2026 website course with downloadable lesson PDFs, audio, premium course resources, vocabulary, and grammar support.</p>
-
-      <div class="rating-row">
-        <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
-        <span class="meta">4.8/5 · early students <!-- [SWAP] verified rating --></span>
-        <span class="div"></span>
-        <span class="meta">3,000+ students taught</span>
-        <span class="div"></span>
-        <span class="meta">CELTA-certified instructor</span>
+    <div>
+      <span class="eyebrow">TOEFL iBT 2026 · Independent prep</span>
+      <h1>The TOEFL iBT 2026 course, built from scratch for the new format.</h1>
+      <p class="sub">Full website course with 86 focused lessons, 16 Module-End Skill Tests, downloadable PDFs and audio — plus optional teacher feedback and 1:1 checkpoints. One-time payment. No subscription.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold btn-lg" href="#plans">See the three plans</a>
+        <a class="btn btn-ghost btn-lg" href="#optin">Get the free vocab pack</a>
       </div>
-
-      <!-- EDIT: CHECKOUT_URL -->
-      <div class="cta-stack">
-        <a href="#offer" class="btn btn-gold btn-lg">
-          Start Self-Study
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="#optin" class="btn btn-outline btn-lg">Get the free vocab PDF</a>
-      </div>
-      <div class="price-tag">
-        <span class="price-now">$79</span>
-        <span class="price-off">ONE-TIME</span>
-      </div>
-
-      <div class="assure">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 30-day money-back</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Full website course</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Updated as the format evolves</span>
+      <div class="trust">
+        <span><b>86</b>&nbsp;lessons</span>
+        <span><b>~8.2 h</b>&nbsp;of teaching</span>
+        <span><b>16</b>&nbsp;Skill Tests</span>
+        <span><b>One-time</b>&nbsp;payment</span>
       </div>
     </div>
 
-    <!-- HERO VISUAL: course card + IMG-01 thumbnail -->
-    <div class="hero-visual">
-      <div class="course-card">
-        <!-- IMG-01 goes as the background of .cc-media (1280×800). Currently a styled placeholder. -->
-        <div class="cc-media" role="img" aria-label="Course preview: instructor teaching the TOEFL 2026 format">
-          <span class="cc-tag">NEW 2026 FORMAT</span>
-          <span class="cc-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        </div>
-        <div class="cc-body">
-          <h4>TOEFL iBT 2026 — Core Lessons, Basic Practice, 8 Focused Hours</h4>
-          <div class="cc-meta"><span class="stars">★★★★★</span> <b>4.8</b> · 196 lessons · 8.2 h</div>
-          <div class="cc-foot">
-            <span class="p">$14.99 <s>$94.99</s></span>
-            <span class="btn btn-gold" style="padding:.5em 1em;font-size:.85rem">Bestseller</span>
-          </div>
-        </div>
+    <!-- Course snapshot card (replaces the old marketplace listing) -->
+    <div class="snap">
+      <div class="snap-top">
+        <span class="tag">The website course</span>
+        <h3>TOEFL iBT 2026 — Complete Course</h3>
+        <p>Reading · Listening · Speaking · Writing, rebuilt for the 2026 tasks.</p>
       </div>
-      <div class="float-badge fb-1">
-        <span class="ic"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/></svg></span>
-        Instructor scored<br>TOEFL 6.0
-      </div>
-      <div class="float-badge fb-2">
-        <span class="ic"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
-        16 skill tests<br>included
+      <div class="snap-body">
+        <div class="snap-row"><span class="ic">🎬</span> 86 focused lessons (~8.2 hours)</div>
+        <div class="snap-row"><span class="ic">📝</span> 16 Module-End Skill Tests (4 per skill)</div>
+        <div class="snap-row"><span class="ic">🎧</span> Listening &amp; Speaking audio files</div>
+        <div class="snap-row"><span class="ic">📄</span> Downloadable lesson PDFs &amp; model answers</div>
+        <div class="snap-foot">
+          <span class="now">$79</span><span class="off">from · one-time</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== TRUST STRIP ===== -->
-<div class="trust">
-  <div class="wrap trust-in">
-    <p class="label">Students we've coached now study at <!-- [SWAP] use real, permissioned destinations --></p>
-    <div class="uni-row">
-      <span class="uni"><svg viewBox="0 0 24 24"><path d="M2 7l10-4 10 4-10 4z"/><path d="M6 10v5c0 1.5 6 3 6 3s6-1.5 6-3v-5"/></svg>New York University</span>
-      <span class="uni">University of Toronto</span>
-      <span class="uni">TU Munich</span>
-      <span class="uni">University of Melbourne</span>
-      <span class="uni">UBC</span>
-    </div>
-    <div class="badge-row">
-      <span class="tbadge"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/></svg> Cambridge CELTA Certified</span>
-      <span class="tbadge"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Aligned to ETS 2026 format</span>
-      <span class="tbadge"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M12 7v5l3 2"/></svg> Lifetime access</span>
-      <span class="tbadge"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 4v5c0 4-3 7-7 8-4-1-7-4-7-8V7z"/></svg> 30-day guarantee</span>
-    </div>
-  </div>
-</div>
-
-<!-- ===== PROBLEM + PILLARS ===== -->
+<!-- ===== PILLARS ===== -->
 <section id="why">
   <div class="wrap center">
-    <span class="eyebrow">Why most TOEFL prep fails in 2026</span>
-    <h2 style="margin-top:.6rem">Studying hard, but your score won't move?</h2>
-    <p class="lede" style="margin-top:.8rem">The exam changed in January 2026. Most courses didn't. Here's what's quietly costing students points.</p>
-
-    <div class="problem-grid">
-      <div class="pain">
-        <span class="x"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
-        <h3>Built for the OLD test</h3>
-        <p>Courses recorded years ago, with a thin "2026 update" bolted on top. The new task types are barely covered.</p>
-      </div>
-      <div class="pain">
-        <span class="x"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
-        <h3>30 hours of filler</h3>
-        <p>Endless lectures that pad the runtime but never tell you exactly what to do when the question appears.</p>
-      </div>
-      <div class="pain">
-        <span class="x"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
-        <h3>"Where do I even start?"</h3>
-        <p>No clear roadmap, no model answers, no realistic mock tests — just guesswork and rising test-day anxiety.</p>
-      </div>
-    </div>
-
-    <h2 style="margin-top:3.2rem">Aidoss fixes that — by design.</h2>
+    <span class="eyebrow">Why Aidoss is different</span>
+    <h2>Not an old TOEFL course with a 2026 sticker</h2>
+    <p class="lede">Every lesson was written for the January 2026 TOEFL iBT — including all seven new question types.</p>
     <div class="pillars">
       <div class="pillar">
         <span class="num">1</span>
-        <h3>Built for the 2026 format</h3>
-        <p>Recorded from scratch for the January 2026 TOEFL iBT — not a retrofit. Every new task is taught the way it's actually scored.</p>
+        <h3>Built for 2026</h3>
+        <p>Made from scratch for the new format, not patched from legacy material. Every new task is explained clearly.</p>
       </div>
       <div class="pillar">
         <span class="num">2</span>
@@ -519,249 +340,236 @@ footer a:hover{color:#fff}
       </div>
       <div class="pillar">
         <span class="num">3</span>
-        <h3>Two-stage test pathway</h3>
-        <p>Complete 16 included module-end skill tests, then add complete timed four-skill exams when you are ready.</p>
+        <h3>Study your way</h3>
+        <p>Start self-study, add teacher Speaking &amp; Writing reviews, or get private 1:1 checkpoints — pick the plan that matches your test date.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== FEATURES ===== -->
-<section class="features">
+<!-- ===== SYSTEM / FEATURES ===== -->
+<section id="system" style="background:linear-gradient(180deg,var(--cream),var(--cream-50))">
   <div class="wrap center">
-    <span class="eyebrow">Everything you get</span>
-    <h2 style="margin-top:.6rem">A complete, focused TOEFL 2026 system</h2>
-    <p class="lede">No fluff. Just the exact lessons, practice, and tools that move your score in one organized course.</p>
-    <div class="feat-grid">
-      <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="m23 7-7 5 7 5z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span><h3>196 focused video lessons</h3><p>~8.2 hours, structured by exam skill and question type.</p></div>
-      <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M9 11l3 3 8-8"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><h3>Downloadable course resources</h3><p>Lesson PDFs, audio, model answers, and premium course materials for self-study.</p></div>
-      <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span><h3>259 audio files</h3><p>Authentic Listening passages and Speaking prompts.</p></div>
-      <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><h3>Every 2026 question type</h3><p>All seven new tasks, taught and modelled individually.</p></div>
-      <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><h3>16 module-end skill tests</h3><p>Four tests each for Reading, Listening, Speaking, and Writing are included in the website course.</p></div>
-      <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></span><h3>Vocab &amp; cheat sheets</h3><p>High-frequency word lists and an exam-day checklist.</p></div>
-      <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M18.18 8.04A6 6 0 0 0 6 10c0 7-3 5-3 5h18s-1.2-.8-1.82-3.96"/><path d="M12 2v2M2 12h2"/></svg></span><h3>Course access + updates</h3><p>Learn at your pace and receive course updates.</p></div>
-      <div class="feat"><span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></span><h3>Any device, anywhere</h3><p>Phone, tablet or laptop — study on the commute.</p></div>
+    <span class="eyebrow">What's included</span>
+    <h2>A complete, focused TOEFL 2026 system</h2>
+    <p class="lede">No fluff. Just the exact lessons, practice, and tools that move your score — in one organized course, positioned as focused, not padded.</p>
+
+    <div class="features" style="text-align:left">
+      <div class="feat"><span class="ic">🎬</span><div><h3>86 focused lessons</h3><p>~8.2 hours, structured by exam skill and question type.</p></div></div>
+      <div class="feat"><span class="ic">📝</span><div><h3>16 Module-End Skill Tests</h3><p>Four per skill — exclusive to the Aidoss website course.</p></div></div>
+      <div class="feat"><span class="ic">📄</span><div><h3>Downloadable resources</h3><p>Lesson PDFs, audio, model answers, and premium course materials.</p></div></div>
+      <div class="feat"><span class="ic">🎧</span><div><h3>Listening &amp; Speaking audio</h3><p>Real audio prompts and practice for every spoken task.</p></div></div>
+      <div class="feat"><span class="ic">📚</span><div><h3>Vocabulary &amp; grammar support</h3><p>Companion resources to make every lesson easier to use.</p></div></div>
+      <div class="feat"><span class="ic">🔄</span><div><h3>2026 format updates</h3><p>Kept current as the new TOEFL iBT format settles in.</p></div></div>
+    </div>
+
+    <div class="stat-strip">
+      <div class="stat-line"><b>86</b><span>focused lessons (~8.2 h)</span></div>
+      <div class="stat-line"><b>16</b><span>Module-End Skill Tests</span></div>
+      <div class="stat-line"><b>$79</b><span>one-time Self-Study price</span></div>
     </div>
   </div>
 </section>
 
-<!-- ===== CURRICULUM ===== -->
-<section id="curriculum">
-  <div class="wrap">
-    <div class="center" style="margin-bottom:2.2rem">
-      <span class="eyebrow">The full roadmap</span>
-      <h2 style="margin-top:.6rem">Five modules. A clear path from day one to test day.</h2>
-    </div>
-    <div class="curric">
-      <aside class="curric-aside">
-        <h3>What's inside the course</h3>
-        <p style="color:#bccbd6;font-size:.9rem;margin:.5rem 0 1rem">Lean by design — positioned as focused, not padded.</p>
-        <div class="stat-line"><b>196</b><span>video lessons (~8.2 hours)</span></div>
-        <div class="stat-line"><b>$79</b><span>one-time Self-Study price</span></div>
-        <div class="stat-line"><b>259</b><span>Listening &amp; Speaking audio files</span></div>
-        <div class="stat-line"><b>7</b><span>official 2026 question types</span></div>
-        <div class="stat-line"><b>✓</b><span>course access &amp; updates</span></div>
-      </aside>
-      <div class="curric-mods">
-        <details class="mod" open>
-          <summary><span class="mnum">1</span><span class="mtitle"><b>Introduction &amp; Strategy</b><span>Orientation, scoring, and your study plan</span></span><svg class="chev" viewBox="0 0 24 24" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-          <div class="mbody"><ul><li>How the 2026 TOEFL iBT is structured and scored</li><li>Build a realistic study plan around your exam date</li><li>Meet your instructor and how to use the course</li></ul></div>
-        </details>
-        <details class="mod">
-          <summary><span class="mnum">2</span><span class="mtitle"><b>Listening</b><span>13 lessons + audio practice</span></span><svg class="chev" viewBox="0 0 24 24" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-          <div class="mbody"><ul><li>Every listening question type taught as its own unit</li><li>Note-taking systems that survive the real-exam clock</li><li>Audio practice and model answer guidance</li></ul></div>
-        </details>
-        <details class="mod">
-          <summary><span class="mnum">3</span><span class="mtitle"><b>Reading</b><span>12 question-type lessons + basic practice</span></span><svg class="chev" viewBox="0 0 24 24" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-          <div class="mbody"><ul><li>Complete the Words and every reading task, step by step</li><li>Time-management tactics for the new reading section</li><li>Basic practice PDFs with answer guidance</li></ul></div>
-        </details>
-        <details class="mod">
-          <summary><span class="mnum">4</span><span class="mtitle"><b>Speaking</b><span>21 lessons + 4 tests with audio prompts</span></span><svg class="chev" viewBox="0 0 24 24" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-          <div class="mbody"><ul><li>Listen &amp; Repeat and Take an Interview, with model answers</li><li>Templates and pronunciation tips that raise your band</li><li>Basic audio prompts for self-study practice</li></ul></div>
-        </details>
-        <details class="mod">
-          <summary><span class="mnum">5</span><span class="mtitle"><b>Writing</b><span>29 lessons + model responses</span></span><svg class="chev" viewBox="0 0 24 24" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-          <div class="mbody"><ul><li>Build-a-Sentence, Email and Academic Discussion mastery</li><li>Reusable structures and high-scoring sample responses</li><li>Basic writing practice with model responses</li></ul></div>
-        </details>
-      </div>
+<!-- ===== MODULES ===== -->
+<section id="modules">
+  <div class="wrap center">
+    <span class="eyebrow">Course map</span>
+    <h2>86 lessons across five modules</h2>
+    <p class="lede">A clear path from orientation to every 2026 task. Beginners get structure; advanced students can jump straight to the tasks they need.</p>
+
+    <div class="modules" style="text-align:left">
+      <details class="mod">
+        <summary><span class="mnum">1</span><span class="mtitle"><b>Introduction</b><span>11 lessons — orientation &amp; the 2026 format</span></span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="mbody">How the 2026 TOEFL iBT works, the seven new question types, scoring on the 1–6 scale, and how to use the course and the Skill Tests.</div>
+      </details>
+      <details class="mod">
+        <summary><span class="mnum">2</span><span class="mtitle"><b>Listening</b><span>13 lessons + audio practice</span></span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="mbody">Note-taking strategy, conversations, announcements and academic talks, plus the new Listen &amp; Repeat task — with audio for every lesson.</div>
+      </details>
+      <details class="mod">
+        <summary><span class="mnum">3</span><span class="mtitle"><b>Reading</b><span>12 question-type lessons + practice</span></span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="mbody">One lesson per question type — factual, negative factual, inference, vocabulary, sentence simplification and more — with timing and accuracy practice.</div>
+      </details>
+      <details class="mod">
+        <summary><span class="mnum">4</span><span class="mtitle"><b>Speaking</b><span>21 lessons + 4 Skill Tests with audio prompts</span></span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="mbody">Take an Interview and every spoken task, answer structures, buying thinking time, and recorded model answers — with four Module-End Skill Tests.</div>
+      </details>
+      <details class="mod">
+        <summary><span class="mnum">5</span><span class="mtitle"><b>Writing</b><span>29 lessons + model responses</span></span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="mbody">Build-a-Sentence, Email Writing, and Writing for an Academic Discussion — templates, model responses, and the most common mistakes to avoid.</div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- ===== MOCK TESTS BAND ===== -->
-<section class="mock" id="mocks">
-  <div class="wrap mock-grid">
-    <div>
-      <span class="eyebrow">From skill tests to complete exam simulation</span>
-      <h2 style="margin-top:.6rem">16 skill tests are included. Complete timed exams are separate.</h2>
-      <p style="margin-top:.9rem">Every website course plan includes four module-end tests per skill. When you are ready for a complete four-section simulation, choose from 20 separately sold Complete Timed Mock Exams.</p>
-      <ul class="checks">
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> 16 Module-End Skill Tests included in Self-Study, Practice Plus, and Guided Sprint</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Website-course feature; not included in the Udemy plan</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> 20 complete four-skill timed exams available separately</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Estimated Aidoss TOEFL-style score returned within 14 days</li>
-      </ul>
-      <a href="#offer" class="btn btn-navy btn-lg" style="margin-top:1.6rem">See the offer</a>
-    </div>
-    <!-- IMG-09: mock-test interface mockup (1000×760). Styled placeholder below. -->
-    <div class="hero-visual">
-      <div class="course-card">
-        <div class="cc-media" role="img" aria-label="Preview of a complete timed four-section TOEFL-style practice exam">
-          <span class="cc-tag">COMPLETE MOCK 03 · FOUR SKILLS</span>
-          <span class="cc-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        </div>
-        <div class="cc-body">
-          <h4>Section timer · audio replay · model answer key</h4>
-          <div class="cc-meta"><span class="stars">★★★★★</span> Built to mirror the 2026 exam</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ===== PLANS ===== -->
+<section id="plans" class="plans">
+  <div class="wrap center">
+    <span class="eyebrow">Choose your plan</span>
+    <h2>Three ways to study — one-time payment</h2>
+    <p class="lede">Every plan includes the full website course, all 86 lessons, and 16 Module-End Skill Tests. Pick the level of feedback and support you need.</p>
 
-<!-- ===== INSTRUCTOR ===== -->
-<section id="instructor">
-  <div class="wrap instr-grid">
-    <!-- IMG-10: instructor portrait of Hossein (800×800). Use a REAL photo. Placeholder below. -->
-    <div class="instr-media">
-      <div class="course-card" style="border-radius:20px">
-        <div class="cc-media" style="aspect-ratio:1/1;background:linear-gradient(160deg,var(--navy-700),var(--navy-900))" role="img" aria-label="Photo of instructor Hossein Alirezaey">
-          <svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-          <span class="cc-tag">YOUR INSTRUCTOR</span>
-        </div>
+    <div class="plan-grid">
+      <!-- SELF-STUDY -->
+      <div class="plan">
+        <div class="pname">Self-Study</div>
+        <div class="pfor">For independent students who want the complete course without 1:1 coaching.</div>
+        <div class="pprice"><span class="amt">$79</span><span class="per">One-time</span></div>
+        <div class="pnt">about NT$2,490</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Full TOEFL iBT 2026 website course (86 lessons)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> 16 Module-End Skill Tests</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Audio, lesson PDFs &amp; companion resources</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> $25 credit toward Mock Exams or the Aidoss Library</li>
+          <li class="muted"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg> No teacher Speaking/Writing reviews</li>
+        </ul>
+        <!-- EDIT: CHECKOUT_URL (Self-Study) -->
+        <a class="btn btn-ghost" href="#optin">Start Self-Study — $79</a>
+      </div>
+
+      <!-- GUIDED SPRINT (FEATURED / MOST POPULAR) -->
+      <div class="plan feature">
+        <span class="ribbon">Most popular</span>
+        <div class="pname">Guided Sprint</div>
+        <div class="pfor">For students who want private checkpoints and accountability through the course.</div>
+        <div class="pprice"><span class="amt">$499</span><span class="per">One-time</span></div>
+        <div class="pnt">about NT$15,800</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Everything in Practice Plus</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Up to 5 private 1:1 checkpoint lessons</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> 5 Speaking + 5 Writing reviews total</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Module-by-module homework direction</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> 1–2 Mock Exam score reviews + exam-week strategy</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> $100 credit toward Mock Exams or the Library</li>
+        </ul>
+        <!-- EDIT: CHECKOUT_URL (Guided Sprint) -->
+        <a class="btn btn-gold" href="#optin">Join Guided Sprint — $499</a>
+      </div>
+
+      <!-- PRACTICE PLUS -->
+      <div class="plan">
+        <div class="pname">Practice Plus</div>
+        <div class="pfor">For students who study alone but want expert correction on Speaking &amp; Writing.</div>
+        <div class="pprice"><span class="amt">$199</span><span class="per">One-time</span></div>
+        <div class="pnt">about NT$6,290</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Everything in Self-Study</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> 3 Speaking + 3 Writing task reviews</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Teacher score estimate on submitted tasks</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Personalized 14/30-day plan + weakness report</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Priority support (60 days) · $50 credit</li>
+        </ul>
+        <!-- EDIT: CHECKOUT_URL (Practice Plus) -->
+        <a class="btn btn-ghost" href="#optin">Get Feedback — $199</a>
       </div>
     </div>
-    <div>
-      <span class="eyebrow">Meet your instructor</span>
-      <h2 style="margin-top:.6rem">Hossein Alirezaey</h2>
-      <div class="creds">
-        <span class="cred"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/></svg> TOEFL 6.0 equivalent (legacy 118/120)</span>
-        <span class="cred"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> Cambridge CELTA Certified</span>
-        <span class="cred"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> 3,000+ students since 2018</span>
-        <span class="cred"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> BA English Teaching &amp; Translation</span>
+
+    <!-- COMPARISON TABLE -->
+    <div class="cmp">
+      <table>
+        <thead>
+          <tr><th>What you get</th><th>Self-Study</th><th class="hl">Guided Sprint</th><th>Practice Plus</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Price (one-time)</td><td>$79</td><td class="hl">$499</td><td>$199</td></tr>
+          <tr><td>Full website course (86 lessons)</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+          <tr><td>16 Module-End Skill Tests</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+          <tr><td>Speaking reviews</td><td><span class="no">—</span></td><td>5</td><td>3</td></tr>
+          <tr><td>Writing reviews</td><td><span class="no">—</span></td><td>5</td><td>3</td></tr>
+          <tr><td>Teacher score estimate</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+          <tr><td>Personalized study plan</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+          <tr><td>Private 1:1 checkpoints</td><td><span class="no">—</span></td><td>Up to 5</td><td><span class="no">—</span></td></tr>
+          <tr><td>Mock Exam score reviews</td><td><span class="no">—</span></td><td>1–2</td><td><span class="no">—</span></td></tr>
+          <tr><td>Mock / Library credit</td><td>$25</td><td>$100</td><td>$50</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lede" style="margin-top:1.2rem;font-size:.86rem">The 20 Complete Timed Mock Exams and the Aidoss Library are sold separately — every plan includes a credit toward either. No plan includes a score guarantee.</p>
+
+    <!-- TARGET SCORE INTENSIVE (APPLICATION ONLY) -->
+    <div class="intensive">
+      <div>
+        <span class="badge">Application only · shown separately</span>
+        <h3>Target Score Intensive</h3>
+        <p>A private plan of up to 40 one-on-one lessons over a maximum 8-week window: custom calendar, daily homework tracking, weekly Speaking &amp; Writing correction, all 20 Complete Timed Mock Exams, and a final test sprint. For serious students who need a target score for university, scholarship, or visa.</p>
       </div>
-      <p>Since 2018, Hossein has focused on one thing: helping students go from stuck to confident on test day. More than 3,000 students have reached their target scores with his methods — many now studying at top universities across the US, Canada, Europe and Australia.</p>
-      <p style="margin-top:.8rem">He's also sat the exam himself and earned a TOEFL 6.0 equivalent score — so he teaches the TOEFL from both sides of the desk.</p>
-      <blockquote class="instr-quote">"I've sat in your seat and felt the same pressure. This course is the clear roadmap I wish every student had — proven methods, no wasted time, no guesswork."</blockquote>
+      <div class="ip">
+        <span class="amt">$1,800</span>
+        <!-- EDIT: APPLY_URL (diagnostic application) -->
+        <a class="btn btn-gold" href="#optin">Apply for a diagnostic</a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===== REVIEWS ===== -->
-<!-- ============================================================= -->
-<!--  [SWAP] PLACEHOLDER REVIEWS — replace with REAL verified       -->
-<!--  student reviews before launch. Do not publish as-is.         -->
-<!-- ============================================================= -->
 <section id="reviews">
   <div class="wrap center">
-    <span class="eyebrow">Loved by early students</span>
-    <h2 style="margin-top:.6rem">Real results, in students' own words</h2>
-    <div class="rev-head">
-      <span class="rev-score">4.8</span>
-      <div style="text-align:left">
-        <span class="stars" style="font-size:1.3rem">★★★★★</span>
-        <div class="meta" style="color:var(--muted);font-weight:600;font-size:.85rem">based on early student feedback · <!-- [SWAP] -->update on launch</div>
-      </div>
+    <span class="eyebrow">Early student feedback</span>
+    <h2>Made for the new tasks students actually face</h2>
+    <div class="reviews" style="text-align:left">
+      <!-- [SWAP] add real handles + video links -->
+      <div class="review"><div class="stars">★★★★★</div><p>"Finally a course that teaches the <em>new</em> tasks. The Listen &amp; Repeat lessons alone fixed my biggest weakness."</p><div class="who"><span class="av">M</span> Verified student</div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"The task-by-task lessons made the new format feel manageable. I knew what to practice next instead of guessing."</p><div class="who"><span class="av">J</span> Verified student</div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"Short, clear lessons I could finish on the bus. The Speaking model answers are gold. Got the score I needed."</p><div class="who"><span class="av">A</span> Verified student</div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"Worth far more than I paid. The practice notes and vocab support made every lesson easier to use."</p><div class="who"><span class="av">S</span> Verified student</div></div>
     </div>
-
-    <div class="rev-grid">
-      <!-- [SWAP] sample review 1 -->
-      <div class="review"><div class="stars">★★★★★</div><p>"Finally a course that teaches the <em>new</em> tasks. The Listen &amp; Repeat lessons alone fixed my biggest weakness. Went up faster than I expected."</p><div class="who"><span class="av">P</span><div><b>Priya R.</b><span>🇮🇳 India</span></div><span class="jump">92 → 108</span></div></div>
-      <!-- [SWAP] sample review 2 -->
-      <div class="review"><div class="stars">★★★★★</div><p>"The task-by-task lessons made the new format feel manageable. I knew what to practice next instead of guessing."</p><div class="who"><span class="av">M</span><div><b>Mehmet K.</b><span>🇹🇷 Türkiye</span></div><span class="jump">+14 pts</span></div></div>
-      <!-- [SWAP] sample review 3 -->
-      <div class="review"><div class="stars">★★★★★</div><p>"Short, clear lessons I could finish on the bus. The model answers for Speaking are gold. Got the score I needed for my visa."</p><div class="who"><span class="av">L</span><div><b>Linh T.</b><span>🇻🇳 Vietnam</span></div><span class="jump">95 → 106</span></div></div>
-      <!-- [SWAP] sample review 4 -->
-      <div class="review"><div class="stars">★★★★★</div><p>"I'd wasted months on an old course. This one is built for 2026 and it shows. The Writing templates are so practical."</p><div class="who"><span class="av">L</span><div><b>Lucas F.</b><span>🇧🇷 Brazil</span></div><span class="jump">88 → 104</span></div></div>
-      <!-- [SWAP] sample review 5 -->
-      <div class="review"><div class="stars">★★★★★</div><p>"Hossein explains exactly what to do for each task. No filler. I finally understood Academic Discussion and stopped losing points."</p><div class="who"><span class="av">J</span><div><b>Ji-woo P.</b><span>🇰🇷 South Korea</span></div><span class="jump">+11 pts</span></div></div>
-      <!-- [SWAP] sample review 6 -->
-      <div class="review"><div class="stars">★★★★★</div><p>"Worth far more than I paid. The practice notes and vocab support made the lessons easier to use. Recommended to my classmates."</p><div class="who"><span class="av">W</span><div><b>Wang L.</b><span>🇨🇳 China</span></div><span class="jump">101 → 112</span></div></div>
-    </div>
-
-    <!-- [SWAP] influencer / creator endorsements -->
-    <div class="infl">
-      <span class="ttl">As recommended by study-abroad creators</span>
-      <div class="avis" aria-hidden="true"><span class="av">▶</span><span class="av">▶</span><span class="av">▶</span></div>
-      <span class="meta" style="color:var(--muted);font-weight:600;font-size:.84rem">3 micro-influencer reviews · <!-- [SWAP] add real handles + video links -->coming soon</span>
-    </div>
+    <p class="lede" style="margin-top:1.2rem;font-size:.82rem"><!-- [SWAP] placeholder reviews — add real handles + video links before launch --></p>
   </div>
 </section>
 
-<!-- ===== OFFER ===== -->
-<section class="offer" id="offer">
-  <div class="wrap center">
-    <span class="eyebrow">Start today</span>
-    <h2 style="margin-top:.6rem">Start with Aidoss Self-Study</h2>
-    <p class="lede" style="color:#bccbd6">The full TOEFL iBT 2026 website course for independent students. Practice Plus and Guided Sprint add teacher correction and private checkpoints when needed.</p>
-
-    <div class="offer-card">
-      <span class="ribbon">SELF-STUDY</span>
-      <div class="offer-price"><span class="now">$79</span><span class="off">One-time</span></div>
-      <p class="sub">One-time payment · full website course</p>
-      <ul class="incl">
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> 196 lessons (8.2 h) built for the 2026 format</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Downloadable lesson PDFs and audio files</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Every 2026 question type, with model answers</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Companion book and premium course resources</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> 16 Module-End Skill Tests, four per skill</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> $25 credit toward Complete Timed Mock Exams or Aidoss Library</li>
-      </ul>
-      <!-- EDIT: CHECKOUT_URL -->
-      <a href="#" class="btn btn-gold btn-lg">
-        Start Self-Study
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-      <div class="guarantee"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 4v5c0 4-3 7-7 8-4-1-7-4-7-8V7z"/></svg> One-time payment with course updates</div>
-    </div>
-
-    <p class="offer-note">The 16 Module-End Skill Tests are included. The 20 Complete Timed Mock Exams and Aidoss Library resources are sold separately; Self-Study includes a $25 credit toward either.</p>
-  </div>
-</section>
-
-<!-- ===== EMAIL CAPTURE ===== -->
-<section class="optin" id="optin">
+<!-- ===== OPT-IN ===== -->
+<section>
   <div class="wrap">
-    <div class="optin-card">
-      <div>
-        <span class="eyebrow">Free download</span>
-        <h2 style="margin-top:.5rem">Not ready yet? Grab the free TOEFL 2026 vocab pack.</h2>
-        <p style="margin-top:.7rem"><strong>Top 100 Vocabulary Words You Must Know</strong> for the new format — with sample questions. Plus one short, practical TOEFL strategy email a week. Unsubscribe anytime.</p>
-        <!-- EDIT: wire this form to MailerLite / Sender (set action + method, or use their embed) -->
-        <form id="optinForm" novalidate>
-          <input type="email" id="optinEmail" name="email" placeholder="you@email.com" autocomplete="email" required aria-label="Your email address" />
-          <button type="submit" class="btn btn-navy">Send me the free PDF</button>
-        </form>
-        <div class="ok" id="optinOk">✅ Check your inbox — your free TOEFL 2026 vocab pack is on its way!</div>
-        <p class="formnote">No spam, ever. Join 2,000+ students on the list. <!-- [SWAP] real list size --></p>
-      </div>
-      <!-- IMG-19: lead-magnet PDF cover (600×800). Styled mockup below. -->
-      <div class="magnet">
-        <div class="pdf-mock">
-          <span class="tag">Free PDF · 2026</span>
-          <div>
-            <h4>TOEFL 2026<br>Top 100 Vocabulary</h4>
-            <p style="color:#bccbd6;font-size:.82rem;margin-top:.5rem">The words you must know — with sample questions.</p>
-          </div>
-          <span class="free">FREE DOWNLOAD</span>
-        </div>
-      </div>
+    <div class="optin" id="optin">
+      <h2>Free: the TOEFL 2026 new-question-type pack</h2>
+      <p>Get the new-question-type checklist and a Complete the Words practice PDF. See exactly how the 2026 test changed — before you buy anything.</p>
+      <!-- EDIT: EMAIL FORM — connect to MailerLite / Sender -->
+      <form onsubmit="return false">
+        <input type="email" placeholder="Your email address" aria-label="Email address" required />
+        <button class="btn btn-gold" type="submit">Send me the pack</button>
+      </form>
+      <small>No spam. Just useful TOEFL 2026 prep. Unsubscribe anytime.</small>
     </div>
   </div>
 </section>
 
 <!-- ===== FAQ ===== -->
-<section id="faq">
+<section id="faq" style="background:linear-gradient(180deg,var(--cream),var(--cream-50))">
   <div class="wrap center">
-    <span class="eyebrow">Questions, answered</span>
-    <h2 style="margin-top:.6rem">Frequently asked questions</h2>
-    <div class="faq-list" style="text-align:left">
-      <details class="qa" open><summary>Is this really built for the new 2026 TOEFL format?<span class="plus"></span></summary><div class="a">Yes. Every lesson was created from scratch for the January 2026 TOEFL iBT — including all seven new question types (Complete the Words, Listen &amp; Repeat, Take an Interview, Build-a-Sentence, Email, Academic Discussion and more). It is not an old course with an "update" bolted on.</div></details>
-      <details class="qa"><summary>I'm a beginner / I'm already advanced — is it for me?<span class="plus"></span></summary><div class="a">Both. The course starts with structure and strategy, then teaches each question type in its own short lesson with a model answer. Beginners get a clear path; advanced students can jump straight to the tasks costing them points.</div></details>
-      <details class="qa"><summary>Where do I take the course?<span class="plus"></span></summary><div class="a">The course is hosted on the Aidoss Academy website and works on phone, tablet, or laptop. Study at your own pace and receive course updates.</div></details>
-      <details class="qa"><summary>What exactly do I get?<span class="plus"></span></summary><div class="a">Self-Study includes the full website course, 16 Module-End Skill Tests, lesson PDFs, audio, companion and premium course resources, vocabulary and grammar resources, course updates, basic technical support, and a $25 credit toward separately sold Complete Timed Mock Exams or Aidoss Library resources.</div></details>
-      <details class="qa"><summary>Which tests are included?<span class="plus"></span></summary><div class="a">The website course includes 16 Module-End Skill Tests: four each for Reading, Listening, Speaking, and Writing. The 20 Complete Timed Mock Exams are separate purchases. Self-Study includes a $25 credit toward those complete exams or eligible Aidoss Library resources.</div></details>
-      <details class="qa"><summary>Do I get personal feedback on Speaking and Writing?<span class="plus"></span></summary><div class="a">No. Self-Study is independent study with model answers. Practice Plus adds teacher correction, and Guided Sprint adds private 1:1 checkpoints.</div></details>
+    <span class="eyebrow">Questions</span>
+    <h2>What students ask before they start</h2>
+    <div class="faq" style="text-align:left">
+      <details>
+        <summary>Is this really built for the 2026 format?<span class="plus"></span></summary>
+        <div class="a">Yes. Every lesson was created from scratch for the January 2026 TOEFL iBT — including all seven new question types. It is not old material with a small update.</div>
+      </details>
+      <details>
+        <summary>How many lessons are there?<span class="plus"></span></summary>
+        <div class="a">86 focused lessons across five modules (Introduction, Listening, Reading, Speaking, Writing), about 8.2 hours of teaching, plus 16 Module-End Skill Tests, audio, and downloadable PDFs.</div>
+      </details>
+      <details>
+        <summary>What's the difference between the three plans?<span class="plus"></span></summary>
+        <div class="a">All three include the full course and 16 Skill Tests. <b>Self-Study ($79)</b> is the complete course on its own. <b>Practice Plus ($199)</b> adds teacher Speaking &amp; Writing reviews, a study plan, and a weakness report. <b>Guided Sprint ($499)</b> adds up to 5 private 1:1 checkpoints, more reviews, homework direction, and exam-week strategy. All are one-time payments.</div>
+      </details>
+      <details>
+        <summary>Is this a subscription?<span class="plus"></span></summary>
+        <div class="a">No. Every Aidoss plan is a one-time payment with course access — never a monthly subscription.</div>
+      </details>
+      <details>
+        <summary>Are the Mock Exams included?<span class="plus"></span></summary>
+        <div class="a">The 20 Complete Timed Mock Exams (Reading, Listening, Speaking, Writing) are sold separately. Each plan includes a credit toward them or the Aidoss Library ($25 / $50 / $100). The Target Score Intensive includes all 20.</div>
+      </details>
+      <details>
+        <summary>I need a specific target score — what should I take?<span class="plus"></span></summary>
+        <div class="a">Start with Guided Sprint if you want guided progress, or apply for the Target Score Intensive — a private, application-only plan built around your exam date and target after a free diagnostic. We set a realistic target together; we don't promise guaranteed scores.</div>
+      </details>
     </div>
   </div>
 </section>
@@ -769,89 +577,57 @@ footer a:hover{color:#fff}
 <!-- ===== FINAL CTA ===== -->
 <section class="final">
   <div class="wrap">
-    <h2>Your TOEFL date isn't waiting. Neither should you.</h2>
-    <p>Start today with the full Aidoss Self-Study course built for the 2026 format, including 16 Module-End Skill Tests, course resources, and a $25 credit toward separately sold Complete Timed Mock Exams or Aidoss Library resources.</p>
-    <div class="cta-stack">
+    <h2>Prepare for the TOEFL that's actually on the screen in 2026</h2>
+    <p>86 lessons, 16 Skill Tests, and the feedback level you choose — one-time, no subscription.</p>
+    <div class="final-cta">
       <!-- EDIT: CHECKOUT_URL -->
-      <a href="#offer" class="btn btn-gold btn-lg">Start Self-Study — $79</a>
-      <a href="#optin" class="btn btn-ghost-light btn-lg">Get the free vocab PDF</a>
+      <a class="btn btn-gold btn-lg" href="#plans">See the three plans</a>
+      <a class="btn btn-ghost-light btn-lg" href="#optin">Get the free vocab pack</a>
     </div>
   </div>
 </section>
 
+<!-- ===== STICKY CTA ===== -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sp">TOEFL iBT 2026 course <small>Plans from $79 one-time</small></div>
+  <a class="btn btn-gold" href="#plans">See plans</a>
+</div>
+
 <!-- ===== FOOTER ===== -->
-<footer>
+<footer class="site">
   <div class="wrap">
     <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="brand" href="#top"><span class="mark" role="img" aria-label="Aidoss owl logo"></span><span style="color:#fff">AIDOSS<small style="color:#90a6b6">English Academy</small></span></a>
-        <p>TOEFL iBT preparation, built from scratch for the 2026 format. Confident, practical, exam-focused teaching for students worldwide.</p>
-      </div>
       <div>
-        <h5>Course</h5>
-        <ul>
-          <li><a href="#why">Why Aidoss</a></li>
-          <li><a href="#curriculum">Curriculum</a></li>
-          <li><a href="#mocks">Mock tests</a></li>
-          <li><a href="#offer">Start Self-Study</a></li>
-        </ul>
+        <div class="foot-brand">Aidoss Academy</div>
+        <p style="font-size:.86rem;margin-top:.3rem">Independent TOEFL iBT 2026 preparation.</p>
       </div>
-      <div>
-        <h5>Academy</h5>
-        <ul>
-          <li><a href="#instructor">Instructor</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="mailto:hello@aidossacademy.com">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Legal</h5>
-        <ul>
-          <li><a href="#">Privacy policy</a></li>
-          <li><a href="#">Terms of use</a></li>
-          <li><a href="#">Refund policy</a></li>
-        </ul>
+      <div class="foot-links">
+        <a href="#system">The course</a>
+        <a href="#plans">Plans</a>
+        <a href="#faq">FAQ</a>
+        <a href="#optin">Free pack</a>
+        <!-- EDIT: real policy links -->
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Aidoss English Academy · aidossacademy.com</span>
-      <span class="foot-legal">TOEFL® is a registered trademark of Educational Testing Service (ETS). Aidoss English Academy is an independent provider and is not endorsed by or affiliated with ETS.</span>
-    </div>
+    <p class="disclaimer">
+      TOEFL is a registered trademark of ETS. Aidoss Academy is an independent preparation provider and is not affiliated with, endorsed by, or sponsored by ETS. Practice and Mock Exam results are Aidoss estimates based on the published TOEFL iBT 2026 task format and scoring criteria — they are not official ETS scores. No plan guarantees a particular score or admission outcome. All plans are one-time purchases; the 20 Complete Timed Mock Exams and the Aidoss Library are sold separately.
+      &nbsp;© <span id="yr"></span> Aidoss English Academy.
+    </p>
   </div>
 </footer>
 
-<!-- ===== STICKY MOBILE CTA ===== -->
-<div class="sticky-cta">
-  <div class="sp">TOEFL iBT 2026 Self-Study <small>$79 one-time</small></div>
-  <!-- EDIT: CHECKOUT_URL -->
-  <a href="#offer" class="btn btn-gold">Start</a>
-</div>
-
 <script>
-/* ===== sticky header shadow ===== */
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8),{passive:true});
-
-/* ===== mobile menu ===== */
-const mb=document.getElementById('menuBtn'),nl=document.getElementById('navlinks');
-mb.addEventListener('click',()=>{const o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
-nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mb.setAttribute('aria-expanded',false)}));
-
-/* ===== email opt-in (front-end only — EDIT: connect to MailerLite/Sender) ===== */
-const f=document.getElementById('optinForm');
-f.addEventListener('submit',e=>{
-  e.preventDefault();
-  const em=document.getElementById('optinEmail');
-  if(!em.value||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value)){em.focus();em.style.borderColor='#d4534b';return;}
-  /* TODO: send `em.value` to your email provider here */
-  f.style.display='none';
-  document.getElementById('optinOk').style.display='block';
-});
-
-/* ===== reveal on scroll ===== */
-const io=new IntersectionObserver((es)=>es.forEach(en=>{if(en.isIntersecting){en.target.style.opacity=1;en.target.style.transform='none';io.unobserve(en.target)}}),{threshold:.12});
-document.querySelectorAll('.pain,.pillar,.feat,.review,.mod,.offer-card,.optin-card').forEach(el=>{el.style.opacity=0;el.style.transform='translateY(16px)';el.style.transition='opacity .6s ease,transform .6s ease';io.observe(el)});
+  // sticky header shadow + sticky CTA reveal
+  var hdr=document.querySelector('header.site'), sticky=document.getElementById('stickyCta');
+  function onScroll(){
+    var y=window.scrollY||0;
+    hdr.classList.toggle('scrolled',y>10);
+    sticky.classList.toggle('show',y>720);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
